@@ -8,7 +8,10 @@ package discountstrategy;
  *
  * @author Andy
  */
-public class Receipt {
-    private LineItem item;
-    private Customer customer;
+public class Customer {
+    private String customerId;
+    private String address;
+    private String fname;
+    private String lname;
+    private char gender;
 }

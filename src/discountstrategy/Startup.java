@@ -9,5 +9,5 @@ package discountstrategy;
  * @author Andy
  */
 public class Startup {
-    
+    CashRegister cr = new CashRegister();
 }

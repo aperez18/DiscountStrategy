@@ -9,5 +9,6 @@ package discountstrategy;
  * @author Andy
  */
 public class DataManager {
-    
+    private Customer customer[];
+    private Product p[];
 }
