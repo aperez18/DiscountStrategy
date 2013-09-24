@@ -9,8 +9,7 @@ package discountstrategy;
  * @author Andy
  */
 public class CashRegister {
-    private final String INPUT_ERROR = "";
-    
+    // declare local variables
     private Receipt r;
     private double subtotal;
     private double taxRate;
@@ -20,11 +19,33 @@ public class CashRegister {
         r = new Receipt(customerId);
     }
     
-    public void addProduct(){
-        // add product to Receipt
+    public void endSale(){
+        calculateTotal();
+        r.printReceipt();
     }
     
-    public void voidProduct(){
+    public double calculateTotal(){
+        //calculate grand total with discounts
+        applyDiscount();
+        calculateSubtotal();
+        return (subtotal*taxRate) + subtotal;
+    }
+    
+    private void calculateSubtotal(){
+        //calculate subtotal of all products on receipt
+    }
+    
+    private void applyDiscount(){
+        //apply discount to transaction
+    }
+    
+    public void addProduct(String productId){
+        // add product to Receipt
+        r.addProduct(productId);
+    }
+    
+    public void voidProduct(String productId){
         // remove product from Receipt
+        r.voidProduct(productId);
     }
 }

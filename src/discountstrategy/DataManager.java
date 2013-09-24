@@ -10,12 +10,12 @@ package discountstrategy;
  */
 public class DataManager {
     private final int NOT_FOUND = -1;
-    private int MIN_RECS = 0;
+    private final int MIN_RECS = 0;
     private final String CUSTOMER_ERROR = "Error: Customer not found.";
-    private final String PRODUCT_ERROR = "ErrorL Product not found.";
+    private final String PRODUCT_ERROR = "Error: Product not found.";
     
-    private Customer customers[];
-    private Product products[];
+    private static Customer customers[];
+    private static Product products[];
     private int foundIndex;
     
     public DataManager(){

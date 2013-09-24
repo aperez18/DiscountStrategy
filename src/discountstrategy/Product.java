@@ -9,15 +9,29 @@ package discountstrategy;
  * @author Andy
  */
 public class Product {
+    private int MIN_LENGTH = 1;
+    private String ID_ERROR = "Error: Invalid product ID.";
+    private String COST_ERROR = "Error: Product cost must be greater than 0.00";
+    private String DESC_ERROR = "Error: Please enter a valid description.";
+    
     private Discount discount;
     private String productId;
     private String description;
     private double unitCost;
     
     public Product(String productId, double unitCost, String description){
-        this.productId = productId;
-        this.unitCost = unitCost;
-        this.description = description;
+        
+        if(productId == null || productId.length() <= MIN_LENGTH){
+            System.out.println(ID_ERROR);
+        }else if(unitCost <= 0){
+            System.out.println(COST_ERROR);
+        }else if(description == null || description.length() <= MIN_LENGTH){
+            System.out.println(DESC_ERROR);
+        }else{
+            this.productId = productId;
+            this.unitCost = unitCost;
+            this.description = description;
+        }
     }
 
     public Product(String productId, double unitCost, String description, Discount discount) {
@@ -40,7 +54,11 @@ public class Product {
     }
 
     public void setProductId(String productId) {
-        this.productId = productId;
+        if(productId == null || productId.length() <= MIN_LENGTH){
+            System.out.println(ID_ERROR);
+        }else{
+            this.productId = productId;
+        }
     }
 
     public String getDescription() {
@@ -48,7 +66,11 @@ public class Product {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        if(description == null || description.length() <= MIN_LENGTH){
+            System.out.println(DESC_ERROR);
+        }else{
+            this.description = description;
+        }
     }
 
     public double getUnitCost() {
@@ -56,7 +78,11 @@ public class Product {
     }
 
     public void setUnitCost(double unitCost) {
-        this.unitCost = unitCost;
+        if(unitCost <= 0){
+            System.out.println(COST_ERROR);
+        }else{
+            this.unitCost = unitCost;
+        }
     }
     
 }
