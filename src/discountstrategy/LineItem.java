@@ -12,4 +12,10 @@ public class LineItem {
     private int qty;
     private double subtotal;
     private Product p;
+    private DataManager db;
+    
+    public LineItem(String productId) {
+        db = new DataManager();
+        p = db.getProduct(productId);
+    }
 }

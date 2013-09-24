@@ -9,5 +9,9 @@ package discountstrategy;
  * @author Andy
  */
 public class Startup {
-    CashRegister cr = new CashRegister();
+    public static void main(String[] args) {
+        CashRegister cr = new CashRegister();
+        String sampleId = "AP33092";
+        cr.startSale(sampleId);
+    }
 }
